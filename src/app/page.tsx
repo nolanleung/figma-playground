@@ -1,7 +1,6 @@
 "use client";
 
 import { parse } from "@/lib/kiwi/parse";
-import { Schema } from "@/lib/kiwi/schema";
 import JSZip from "jszip";
 import { useState } from "react";
 
@@ -39,6 +38,7 @@ export default function Home() {
       const schema = parse(files["canvas.fig"]);
       setSchema(schema.root);
       setCanvases(schema.root.children.map((c: any) => c.name));
+      console.log(schema.root)
     };
     reader.readAsArrayBuffer(file);
   };
