@@ -38,7 +38,7 @@ export default function Home() {
       const schema = parse(files["canvas.fig"]);
       setSchema(schema.root);
       setCanvases(schema.root.children.map((c: any) => c.name));
-      console.log(schema.root)
+      console.log(schema.root);
     };
     reader.readAsArrayBuffer(file);
   };
@@ -51,7 +51,7 @@ export default function Home() {
     >
       {activeCanvas ? (
         <div className="flex flex-col items-center justify-center w-full h-full">
-          <button onClick={()=>setActiveCanvas(null)}>back</button>
+          <button onClick={() => setActiveCanvas(null)}>back</button>
           <div className="flex items-center justify-center w-full h-full flex-wrap">
             {schema.children
               .find((c: any) => c.name === activeCanvas)
@@ -77,3 +77,4 @@ export default function Home() {
     </main>
   );
 }
+
